@@ -8,5 +8,5 @@ def compile(pompath) {
 
     logger(myCompiler.compile(pompath))
 
-    echo "Workspace is ${env.WORKSPACE}"
+    echo "vars/infincompile: Workspace is ${env.WORKSPACE}"
 }
