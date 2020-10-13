@@ -7,4 +7,6 @@ def compile(pompath) {
     Compiler myCompiler = new Compiler(service)
 
     logger(myCompiler.compile(pompath))
+
+    println env.WORKSPACE
 }
