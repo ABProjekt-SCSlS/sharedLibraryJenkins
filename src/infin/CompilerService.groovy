@@ -12,7 +12,6 @@ class CompilerService implements InterfaceCompilerService {
     }
     
     String compile(pompath) {
-        echo "CompilerService.compile()): Workspace is ${env.WORKSPACE}"
         return "mvn -f ${pompath} clean compile".execute().text
     }
 
