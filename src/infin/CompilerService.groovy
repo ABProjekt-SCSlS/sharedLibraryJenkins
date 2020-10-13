@@ -5,11 +5,9 @@ import groovy.util.logging.Log
 @Log
 class CompilerService implements InterfaceCompilerService {
 
-    String WORKSPACE    
     Closure logger
 
-    CompilerService (String WORKSPACE, Closure logger){
-        this.WORKSPACE = WORKSPACE
+    CompilerService (Closure logger){
         this.logger = logger
     }
     
@@ -19,6 +17,6 @@ class CompilerService implements InterfaceCompilerService {
     }
 
     String version(){
-        return "mvn -v".execute().text
+        logger("mvn -v".execute().text)
     }
 }
