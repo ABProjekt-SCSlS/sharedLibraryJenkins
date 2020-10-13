@@ -1,6 +1,6 @@
 package infin
 
 interface InterfaceCompilerService extends Serializable {
-    String compile(pompath)
+    void compile()
     String version()
 }

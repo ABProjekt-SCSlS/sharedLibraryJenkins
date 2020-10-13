@@ -4,16 +4,18 @@ import groovy.util.logging.Log
 
 @Log
 class CompilerService implements InterfaceCompilerService {
-    
+
+    String WORKSPACE    
     Closure logger
 
-    CompilerService (Closure logger){
+    CompilerService (String WORKSPACE, Closure logger){
+        this.WORKSPACE = WORKSPACE
         this.logger = logger
     }
     
-    String compile(pompath) {
-        println "CompilerService.compile()): Workspace is ${env.WORKSPACE}"
-        return "mvn -f ${pompath} clean compile".execute().text
+    void compile() {
+        logger("CompilerService.compile()): Workspace is ${env.WORKSPACE}")
+        logger("mvn -f " + WORKSPACE + " clean compile".execute().text)
     }
 
     String version(){
