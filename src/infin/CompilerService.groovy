@@ -4,10 +4,12 @@ import groovy.util.logging.Log
 
 @Log
 class CompilerService implements InterfaceCompilerService {
-    
+
+    String WORKSPACE    
     Closure logger
 
-    CompilerService (Closure logger){
+    CompilerService (String WORKSPACE, Closure logger){
+        this.WORKSPACE = WORKSPACE
         this.logger = logger
     }
     
