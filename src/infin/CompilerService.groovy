@@ -16,6 +16,6 @@ class CompilerService implements InterfaceCompilerService {
     }
 
     String version(){
-        logger "mvn -v".execute().text)
+        logger "mvn -v".execute().text
     }
 }
