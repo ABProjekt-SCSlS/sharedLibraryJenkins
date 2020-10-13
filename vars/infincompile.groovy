@@ -8,5 +8,5 @@ def compile(pompath) {
 
     logger(myCompiler.compile(pompath))
 
-    println env.WORKSPACE
+    echo "Workspace is ${env.BUILD_URL}"
 }
