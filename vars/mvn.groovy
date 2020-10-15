@@ -28,6 +28,10 @@ def deploy() {
     myMaven.deploy(config)
 }
 
+def deploy2tomcat() {
+    myMaven.deploy2tomcat(config)
+}
+
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
