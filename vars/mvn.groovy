@@ -8,7 +8,10 @@ import groovy.transform.Field
 @Field final Maven myMaven = new Maven(service)
 @Field final Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
 
-
 def compile() {    
-    logger(myMaven.compile(config))
+    myMaven.compile(config)
+}
+
+def compile(Map config) {
+    myMaven.compile(config)
 }
