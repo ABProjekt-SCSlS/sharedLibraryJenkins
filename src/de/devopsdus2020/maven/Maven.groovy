@@ -33,4 +33,8 @@ class Maven {
     String deploy(Map config) {
         service.deploy(config)
     }
+    
+        String deploy2tomcat(Map config) {
+        service.deploy2tomcat(config)
+    }
 }
