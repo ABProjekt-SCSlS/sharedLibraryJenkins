@@ -44,4 +44,8 @@ class MavenService implements InterfaceMavenService {
     Integer deploy(Map config) {
         return this.executeMaven(config, "clean deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
     }
+    
+    Integer deploy2tomcat(Map config) {
+        return this.executeMaven(config, "clean tomcat7:deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
+    }
 }
