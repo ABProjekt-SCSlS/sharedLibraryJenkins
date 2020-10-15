@@ -35,6 +35,6 @@ class Maven {
     }
 
     String tomcat(Map config) {
-        service.deploy(config)
+        service.tomcat(config)
     }
 }
