@@ -27,7 +27,7 @@ def dockerCreate(Map config) {
 }
 
 def dockerExport(Map config) {  
-    makeMyDocker(Map config).export(config)
+    makeMyDocker().export(config)
 }
 
 def dockerInspect(Map config) {  
