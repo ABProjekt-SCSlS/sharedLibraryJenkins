@@ -20,7 +20,7 @@ class DockerService implements InterfaceDockerService {
         // Check whether config.mvn_args exists and is a non-empty String (or GString)
         if (config && config.containsKey('docker_opt') &&
                 config.docker_opt &&
-                (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
+                (config.docker_opt instanceof String || config.docker_opt instanceof GString)) {
             csequence += " " + config.docker_opt
         }
         if (mcommand) { // non-empty string?
