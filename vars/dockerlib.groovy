@@ -38,7 +38,7 @@ def dockerKill() {
     makeMyDocker().kill(config)
 }
 
-def dockerList() {  
+def dockerList(Map config) {  
     makeMyDocker().list(config)
 }
 
