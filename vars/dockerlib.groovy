@@ -23,7 +23,7 @@ def dockerCP(Map config) {
 }
 
 def dockerCreate(Map config) {  
-    makeMyDocker(Map config).create(config)
+    makeMyDocker().create(config)
 }
 
 def dockerExport(Map config) {  
