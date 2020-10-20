@@ -17,5 +17,3 @@ def makeMyDocker(){
 def dockerversion() {  
     makeMyDocker().executeWithDockerCompose(config)
 }
-
-dockerversion()
