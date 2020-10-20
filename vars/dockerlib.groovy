@@ -14,7 +14,7 @@ def makeMyDocker(){
     return myDocker
 }
 
-def dockerBuild() {  
+def dockerBuild(Map config) {  
     makeMyDocker().build(config)
 }
 
