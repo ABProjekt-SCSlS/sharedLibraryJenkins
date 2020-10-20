@@ -9,11 +9,19 @@ class Ansible {
         this.service = service
     }
 
-    Integer imagebuild(Map configbuild) {
-        service.imagebuild(configbuild)
+    Integer execute(Map config) {
+        return service.execute(config)
     }
 
-    Integer imagepush(Map configpush){
-        service.imagepush(configpush)
+    Integer azurecrpush(Map config){
+       return service.azurecrpush(config)
+    }
+
+    Integer nexuspull(Map config) {
+        return service.nexuspull(config)
+    }
+
+    Integer nexuspullazurecrpush(Map config) {
+        return service.nexuspullazurecrpush(config)
     }
 }
