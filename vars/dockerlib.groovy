@@ -18,23 +18,23 @@ def dockerBuild(Map config) {
     makeMyDocker().build(config)
 }
 
-def dockerCP() {  
+def dockerCP(Map config) {  
     makeMyDocker().cp(config)
 }
 
-def dockerCreate() {  
-    makeMyDocker().create(config)
+def dockerCreate(Map config) {  
+    makeMyDocker(Map config).create(config)
 }
 
-def dockerExport() {  
-    makeMyDocker().export(config)
+def dockerExport(Map config) {  
+    makeMyDocker(Map config).export(config)
 }
 
-def dockerInspect() {  
+def dockerInspect(Map config) {  
     makeMyDocker().inspect(config)
 }
 
-def dockerKill() {  
+def dockerKill(Map config) {  
     makeMyDocker().kill(config)
 }
 
@@ -42,55 +42,55 @@ def dockerList(Map config) {
     makeMyDocker().list(config)
 }
 
-def dockerLogin() {  
+def dockerLogin(Map config) {  
     makeMyDocker().login(config)
 }
 
-def dockerLogout() {  
+def dockerLogout(Map config) {  
     makeMyDocker().logout(config)
 }
 
-def dockerPS() {  
+def dockerPS(Map config) {  
     makeMyDocker().ps(config)
 }
 
-def dockerPull() {  
+def dockerPull(Map config) {  
     makeMyDocker().pull(config)
 }
 
-def dockerPush() {  
+def dockerPush(Map config) {  
     makeMyDocker().push(config)
 }
 
-def dockerRestart() {  
+def dockerRestart(Map config) {  
     makeMyDocker().restart(config)
 }
 
-def dockerRM() {  
+def dockerRM(Map config) {  
     makeMyDocker().rm(config)
 }
 
-def dockerRMI() {  
+def dockerRMI(Map config) {  
     makeMyDocker().rmi(config)
 }
 
-def dockerRUN() {  
+def dockerRUN(Map config) {  
     makeMyDocker().run(config)
 }
 
-def dockerStart() {  
+def dockerStart(Map config) {  
     makeMyDocker().start(config)
 }
 
-def dockerStop() {  
+def dockerStop(Map config) {  
     makeMyDocker().stop(config)
 }
 
-def dockerVersion() {  
-    makeMyDocker().version(config)
+def dockerVersion(Map config) {  
+    makeMyDocker(Map config).version(config)
 }
 
-def dockerCompose() {  
+def dockerCompose(Map config) {  
     makeMyDocker().executeWithDockerCompose(config)
 }
 
