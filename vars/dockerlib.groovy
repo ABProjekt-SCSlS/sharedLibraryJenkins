@@ -87,7 +87,7 @@ def dockerStop(Map config) {
 }
 
 def dockerVersion(Map config) {  
-    makeMyDocker(Map config).version(config)
+    makeMyDocker().version(config)
 }
 
 def dockerCompose(Map config) {  
