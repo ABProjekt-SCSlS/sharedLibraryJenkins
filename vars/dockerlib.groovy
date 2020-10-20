@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [docker_opt:"version"] 
+@Field final Map config = [docker_opt:""] 
 
 
 def makeMyDocker(){
@@ -14,6 +14,83 @@ def makeMyDocker(){
     return myDocker
 }
 
-def dockerversion() {  
+def dockerBuild() {  
+    makeMyDocker().build(config)
+}
+
+def dockerCP() {  
+    makeMyDocker().cp(config)
+}
+
+def dockerCreate() {  
+    makeMyDocker().create(config)
+}
+
+def dockerExport() {  
+    makeMyDocker().export(config)
+}
+
+def dockerInspect() {  
+    makeMyDocker().inspect(config)
+}
+
+def dockerKill() {  
+    makeMyDocker().kill(config)
+}
+
+def dockerList() {  
+    makeMyDocker().list(config)
+}
+
+def dockerLogin() {  
+    makeMyDocker().login(config)
+}
+
+def dockerLogout() {  
+    makeMyDocker().logout(config)
+}
+
+def dockerPS() {  
+    makeMyDocker().ps(config)
+}
+
+def dockerPull() {  
+    makeMyDocker().pull(config)
+}
+
+def dockerPush() {  
+    makeMyDocker().push(config)
+}
+
+def dockerRestart() {  
+    makeMyDocker().restart(config)
+}
+
+def dockerRM() {  
+    makeMyDocker().rm(config)
+}
+
+def dockerRMI() {  
+    makeMyDocker().rmi(config)
+}
+
+def dockerRUN() {  
+    makeMyDocker().run(config)
+}
+
+def dockerStart() {  
+    makeMyDocker().start(config)
+}
+
+def dockerStop() {  
+    makeMyDocker().stop(config)
+}
+
+def dockerVersion() {  
+    makeMyDocker().version(config)
+}
+
+def dockerCompose() {  
     makeMyDocker().executeWithDockerCompose(config)
 }
+

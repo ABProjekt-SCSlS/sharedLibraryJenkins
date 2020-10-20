@@ -12,7 +12,7 @@ class DockerService implements InterfaceDockerService {
         this.logger = logger
     }
 
-    String assembleDockerCommand(Map config, String command) {
+    String assembleDockerCommand(Map config, String mcommand) {
         // Build mvn command with configuration and phase
 
         String csequence = "docker"
@@ -23,15 +23,15 @@ class DockerService implements InterfaceDockerService {
                 (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
             csequence += " " + config.docker_opt
         }
-        if (command) { // non-empty string?
-            csequence += " " + command
+        if (mcommand) { // non-empty string?
+            csequence += " " + mcommand
         }        
         return csequence
     }
 
     
-    Integer executeDocker(Map config, String command) {
-        String csequence = assembleDockerCommand(config, command)
+    Integer executeDocker(Map config, String mcommand) {
+        String csequence = assembleDockerCommand(config, mcommand)
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
@@ -45,7 +45,7 @@ class DockerService implements InterfaceDockerService {
     }
 
 
-     String assembleComposeCommand(Map config, String command) {
+     String assembleComposeCommand(Map config, String mcommand) {
         // Build mvn command with configuration and phase
 
         String csequence = "docker-compose"
@@ -56,15 +56,15 @@ class DockerService implements InterfaceDockerService {
                 (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
             csequence += " " + config.docker_opt
         }
-        if (command) { // non-empty string?
-            csequence += " " + command
+        if (mcommand) { // non-empty string?
+            csequence += " " + mcommand
         }        
         return csequence
     }
 
     
-    Integer executeDockerCompose(Map config, String command) {
-        String csequence = assembleComposeCommand(config, command)
+    Integer executeDockerCompose(Map config, String mcommand) {
+        String csequence = assembleComposeCommand(config, mcommand)
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
@@ -77,18 +77,87 @@ class DockerService implements InterfaceDockerService {
         return exitValue 
     }
 
+    Integer build(Map config) {  
+        return this.executeDocker(config, "build")
+    
+    }
 
-    Integer getDockerVersion(Map config){
+    Integer cp(Map config) {  
+        return this.executeDocker(config, "cp")
+    }
+
+    Integer create(Map config) {  
+        return this.executeDocker(config, "create")
+    }
+
+    Integer export(Map config) {  
+        return this.executeDocker(config, "export")
+    }
+
+    Integer inspect(Map config) {  
+        return this.executeDocker(config, "inspect")
+    }
+
+    Integer kill(Map config) {  
+        return this.executeDocker(config, "kill")
+    }
+
+    Integer list(Map config) {  
+        return this.executeDocker(config, "list")
+    }
+
+    Integer login(Map config) {  
+        return this.executeDocker(config, "login")
+    }
+
+    Integer logout(Map config) {  
+        return this.executeDocker(config, "logout")
+    }
+
+    Integer ps(Map config) {  
+        return this.executeDocker(config, "ps")
+    }
+
+    Integer pull(Map config) {  
+        return this.executeDocker(config, "pull")
+    }
+
+    Integer push(Map config) {  
+        return this.executeDocker(config, "push")
+    }
+
+    Integer restart(Map config) {  
+        return this.executeDocker(config, "restart")
+    }
+
+    Integer rm(Map config) {  
+        return this.executeDocker(config, "rm")
+    }
+
+    Integer rmi(Map config) {  
+        return this.executeDocker(config, "rmi")
+    }
+
+    Integer run(Map config) {  
+        return this.executeDocker(config, "run")
+    }
+
+    Integer start(Map config) {  
+        return this.executeDocker(config, "start")
+    }
+
+    Integer stop(Map config) {  
+        return this.executeDocker(config, "stop")
+    }
+
+
+    Integer version(Map config) {  
         return this.executeDocker(config, "version")
     }
 
-    Integer executeWithDockerOption(Map config){
-        return this.executeDocker(config,"")
+    Integer executeWithDockerCompose(Map config){
+        return this.executeDockerCompose(config, "")
     }
-
-     Integer executeWithDockerCompose(Map config){
-         return this.executeDockerCompose(config, "")
-     }
 
 
 }
