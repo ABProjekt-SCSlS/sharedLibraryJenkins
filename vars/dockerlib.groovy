@@ -39,7 +39,6 @@ def dockerKill() {
 }
 
 def dockerList() {  
-    config.docker_opt="container"
     makeMyDocker().list(config)
 }
 
