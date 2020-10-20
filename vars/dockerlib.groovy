@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [docker_opt:""] 
+Map config = [docker_opt:""] 
 
 
 def makeMyDocker(){
