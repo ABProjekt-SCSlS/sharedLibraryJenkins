@@ -66,7 +66,12 @@ class DockerService implements InterfaceDockerService {
         }
         if (mcommand) { // non-empty string?
             csequence += " " + mcommand
-        }        
+        }
+        if (config && config.containsKey('docker_arg') &&
+                config.docker_arg &&
+                (config.docker_arg instanceof String || config.docker_arg instanceof GString)) {
+            csequence += " " + config.docker_arg
+        }  
         return csequence
     }
 
