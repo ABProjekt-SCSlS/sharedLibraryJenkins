@@ -169,7 +169,7 @@ class DockerService implements InterfaceDockerService {
     }
 
     Integer executeWithDockerCompose(Map config){
-        return this.executeDockerCompose(config, "")
+        return this.executeDockerCompose(config, " ")
     }
 
 
