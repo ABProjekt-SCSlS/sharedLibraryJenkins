@@ -53,7 +53,7 @@ class DockerService implements InterfaceDockerService {
     }
 
 
-     String assembleComposeCommand(Map config, String mcommand) {
+     String assembleComposeCommand(Map config) {
         // Build mvn command with configuration and phase
 
         String csequence = "docker-compose"
@@ -64,15 +64,12 @@ class DockerService implements InterfaceDockerService {
                 (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
             csequence += " " + config.docker_opt
         }
-        if (mcommand) { // non-empty string?
-            csequence += " " + mcommand
-        } 
         return csequence
     }
 
     
-    Integer executeDockerCompose(Map config, String mcommand) {
-        String csequence = assembleComposeCommand(config, mcommand)
+    Integer executeDockerCompose(Map config) {
+        String csequence = assembleComposeCommand(config)
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
@@ -164,7 +161,7 @@ class DockerService implements InterfaceDockerService {
     }
 
     Integer executeWithDockerCompose(Map config){
-        return this.executeDockerCompose(config, " ")
+        return this.executeDockerCompose(config)
     }
 
 
